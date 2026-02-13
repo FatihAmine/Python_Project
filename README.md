@@ -153,7 +153,7 @@ shopverse/
 
 ```bash
 # Clone the repo
-git clone https://github.com/FatihAmine/Python_Project.git
+git clone https://github.com/FatihAmine/ShopVerse-E-Commerce-Analytics-Platform.git
 cd Python_Project
 
 # Install Node dependencies
