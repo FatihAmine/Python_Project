@@ -246,16 +246,4 @@ The dashboard shows accuracy, precision, recall, F1-score, and which features ma
 
 ---
 
-## Screenshots
 
-Once you have the dashboard running, you'll see something like:
-
-- **KPI Cards** : Total actions, unique visitors, cart additions, page views
-- **Traffic Over Time** : Line chart showing when users are most active
-- **Popular Products** : Horizontal bar chart of most-added-to-cart items
-- **Shopping Funnel** : Home → Product View → Add to Cart → Cart (with drop-off %)
-- **ML Results** : Model performance metrics + feature importance chart
-
-The dashboard supports 3 themes: **Clean Light**, **Midnight (Dark)**, and **Ocean Blue**.
-
----
