@@ -259,7 +259,3 @@ Once you have the dashboard running, you'll see something like:
 The dashboard supports 3 themes: **Clean Light**, **Midnight (Dark)**, and **Ocean Blue**.
 
 ---
-
-## License
-
-This is a demo/educational project. Feel free to use it however you want.
