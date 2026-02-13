@@ -1,6 +1,6 @@
-# 🛍️ ShopVerse — E-Commerce Analytics Platform
+# 🛍️ ShopVerse : E-Commerce Analytics Platform
 
-A full-stack e-commerce demo that doesn't just sell products — it **tracks everything**. Every click, every page view, every "Add to Cart" is captured, analyzed, and visualized through a custom-built analytics pipeline.
+A full-stack e-commerce demo that doesn't just sell products : it **tracks everything**. Every click, every page view, every "Add to Cart" is captured, analyzed, and visualized through a custom-built analytics pipeline.
 
 I built this to explore how real e-commerce companies handle user behavior data end-to-end: from raw event collection → data processing → dashboards → machine learning predictions.
 
@@ -10,14 +10,14 @@ I built this to explore how real e-commerce companies handle user behavior data 
 
 **ShopVerse** is a fake online store (30 products, full cart system) wired up with a serious analytics backend:
 
-- **Frontend store** — Browse products, view details, add to cart, manage your basket. It looks and feels like a real shop.
-- **Event tracking** — Every user interaction gets logged as a JSON file on the server. No third-party dependency required.
-- **Google Analytics integration** — GA4 runs alongside the custom tracker so you can compare the two.
-- **Python analytics engine** — Parses the raw logs, calculates metrics, and generates reports automatically.
-- **Streamlit dashboard** — Interactive charts showing traffic, popular products, conversion funnels, and more.
-- **ML predictions** — A Random Forest model trained on user sessions to predict who's likely to convert (visit cart).
-- **Apache NiFi** — Data flow automation for processing logs at scale.
-- **Marquez** — Data lineage tracking so you can see where your data came from and where it went.
+- **Frontend store** : Browse products, view details, add to cart, manage your basket. It looks and feels like a real shop.
+- **Event tracking** : Every user interaction gets logged as a JSON file on the server. No third-party dependency required.
+- **Google Analytics integration** : GA4 runs alongside the custom tracker so you can compare the two.
+- **Python analytics engine** : Parses the raw logs, calculates metrics, and generates reports automatically.
+- **Streamlit dashboard** : Interactive charts showing traffic, popular products, conversion funnels, and more.
+- **ML predictions** : A Random Forest model trained on user sessions to predict who's likely to convert (visit cart).
+- **Apache NiFi** : Data flow automation for processing logs at scale.
+- **Marquez** : Data lineage tracking so you can see where your data came from and where it went.
 
 ---
 
@@ -90,11 +90,11 @@ Here's how the pieces fit together:
                                           └──────────┘
 ```
 
-1. **log_parser.py** — Reads all JSON event files from `logs/`, parses timestamps, and loads everything into a Pandas DataFrame.
-2. **metrics.py** — Takes the DataFrame and calculates: events by type, events by page, traffic over time, conversion funnel, e-commerce metrics (add-to-cart counts per product).
-3. **generate_analytics.py** — Orchestrates the pipeline: calls the parser, runs the metrics, saves CSV files and a summary JSON to `analytics/output/`.
-4. **ml_analysis.py** — Builds user-level features (total events, unique pages, product views, session duration, clicks) and trains a Random Forest to predict cart conversion.
-5. **dashboard.py** — Streamlit app that loads the generated CSVs and renders interactive Plotly charts. Supports 3 themes, Google Analytics comparison view, and live ML results.
+1. **log_parser.py** : Reads all JSON event files from `logs/`, parses timestamps, and loads everything into a Pandas DataFrame.
+2. **metrics.py** : Takes the DataFrame and calculates: events by type, events by page, traffic over time, conversion funnel, e-commerce metrics (add-to-cart counts per product).
+3. **generate_analytics.py** : Orchestrates the pipeline: calls the parser, runs the metrics, saves CSV files and a summary JSON to `analytics/output/`.
+4. **ml_analysis.py** : Builds user-level features (total events, unique pages, product views, session duration, clicks) and trains a Random Forest to predict cart conversion.
+5. **dashboard.py** : Streamlit app that loads the generated CSVs and renders interactive Plotly charts. Supports 3 themes, Google Analytics comparison view, and live ML results.
 
 ---
 
@@ -145,9 +145,9 @@ shopverse/
 
 ### Prerequisites
 
-- **Node.js** (v16+) — for the web server
-- **Python** (3.9+) — for the analytics pipeline
-- **Docker** (optional) — only if you want NiFi or Marquez
+- **Node.js** (v16+) : for the web server
+- **Python** (3.9+) : for the analytics pipeline
+- **Docker** (optional) : only if you want NiFi or Marquez
 
 ### 1. Start the Web Store
 
@@ -187,10 +187,10 @@ streamlit run analytics/dashboard.py
 ```
 
 Open [http://localhost:8501](http://localhost:8501) and you'll see:
-- **Local Logs** — KPI cards + traffic charts from your server logs
-- **Google Analytics** — Compare with GA4 data (needs credentials)
-- **Comparison View** — Side-by-side: server logs vs Google Analytics
-- **Predictions (ML)** — Model accuracy, feature importance, confusion matrix
+- **Local Logs** : KPI cards + traffic charts from your server logs
+- **Google Analytics** : Compare with GA4 data (needs credentials)
+- **Comparison View** : Side-by-side: server logs vs Google Analytics
+- **Predictions (ML)** : Model accuracy, feature importance, confusion matrix
 
 ### 4. Start NiFi (Optional)
 
@@ -231,16 +231,16 @@ Marquez UI at [http://localhost:3002](http://localhost:3002), API at [http://loc
 
 The conversion prediction model works like this:
 
-1. **Group events by user** — Each user's session becomes one row
+1. **Group events by user** : Each user's session becomes one row
 2. **Extract features:**
    - Total number of events
    - Number of unique pages visited
    - Number of product detail views
    - Session duration (seconds)
    - Total clicks
-3. **Target variable** — Did the user visit the cart page? (yes = 1, no = 0)
-4. **Model** — Random Forest Classifier (100 trees)
-5. **Split** — 80% train, 20% test with stratification
+3. **Target variable** : Did the user visit the cart page? (yes = 1, no = 0)
+4. **Model** : Random Forest Classifier (100 trees)
+5. **Split** : 80% train, 20% test with stratification
 
 The dashboard shows accuracy, precision, recall, F1-score, and which features matter most for predicting conversions.
 
@@ -250,11 +250,11 @@ The dashboard shows accuracy, precision, recall, F1-score, and which features ma
 
 Once you have the dashboard running, you'll see something like:
 
-- **KPI Cards** — Total actions, unique visitors, cart additions, page views
-- **Traffic Over Time** — Line chart showing when users are most active
-- **Popular Products** — Horizontal bar chart of most-added-to-cart items
-- **Shopping Funnel** — Home → Product View → Add to Cart → Cart (with drop-off %)
-- **ML Results** — Model performance metrics + feature importance chart
+- **KPI Cards** : Total actions, unique visitors, cart additions, page views
+- **Traffic Over Time** : Line chart showing when users are most active
+- **Popular Products** : Horizontal bar chart of most-added-to-cart items
+- **Shopping Funnel** : Home → Product View → Add to Cart → Cart (with drop-off %)
+- **ML Results** : Model performance metrics + feature importance chart
 
 The dashboard supports 3 themes: **Clean Light**, **Midnight (Dark)**, and **Ocean Blue**.
 
