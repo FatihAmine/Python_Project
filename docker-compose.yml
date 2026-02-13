@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  nifi:
+    image: apache/nifi:latest
+    container_name: shopverse_nifi
+    ports:
+      - "8443:8443"
+    environment:
+      - NIFI_WEB_HTTPS_PORT=8443
+      - NIFI_WEB_HTTPS_HOST=0.0.0.0
+      # Static Credentials (so you don't have to check logs)
+      - SINGLE_USER_CREDENTIALS_USERNAME=admin
+      - SINGLE_USER_CREDENTIALS_PASSWORD=ShopVerseAnalytics2026!
+    volumes:
+      - ./logs:/opt/nifi/nifi-current/input_logs
+      - ./analytics/output:/opt/nifi/nifi-current/output_stats
+    restart: unless-stopped

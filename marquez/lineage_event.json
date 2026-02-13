@@ -1,0 +1,61 @@
+{
+    "schemaURL": "https://openlineage.io/spec/1-0-5/OpenLineage.json#/definitions/RunEvent",
+    "eventType": "COMPLETE",
+    "eventTime": "2026-02-08T21:14:00.000Z",
+    "run": {
+        "runId": "bbbbbbbb-cccc-dddd-eeee-ffffffffffff"
+    },
+    "job": {
+        "namespace": "shopverse",
+        "name": "nifi_event_aggregation"
+    },
+    "inputs": [
+        {
+            "namespace": "shopverse",
+            "name": "shopverse.logs",
+            "facets": {
+                "schema": {
+                    "_producer": "nifi-pipeline",
+                    "_schemaURL": "https://openlineage.io/spec/facets/1-0-0/SchemaDatasetFacet.json",
+                    "fields": [
+                        {
+                            "name": "timestamp",
+                            "type": "VARCHAR"
+                        },
+                        {
+                            "name": "event_type",
+                            "type": "VARCHAR"
+                        },
+                        {
+                            "name": "user_id",
+                            "type": "VARCHAR"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "outputs": [
+        {
+            "namespace": "shopverse",
+            "name": "shopverse.analytics",
+            "facets": {
+                "schema": {
+                    "_producer": "nifi-pipeline",
+                    "_schemaURL": "https://openlineage.io/spec/facets/1-0-0/SchemaDatasetFacet.json",
+                    "fields": [
+                        {
+                            "name": "event_type",
+                            "type": "VARCHAR"
+                        },
+                        {
+                            "name": "count",
+                            "type": "INTEGER"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "producer": "nifi-pipeline"
+}

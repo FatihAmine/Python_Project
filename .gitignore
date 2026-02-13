@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+__pycache__/
+
+# Analytics output (generated data)
+analytics/output/
+analytics/ga_output/
+
+# Log files (generated at runtime)
+logs/
+
+# Credentials
+analytics/ga_credentials.json
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
