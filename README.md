@@ -1,4 +1,4 @@
-# 🛍️ ShopVerse : E-Commerce Analytics Platform
+#  ShopVerse : E-Commerce Analytics Platform
 
 A full-stack e-commerce demo that doesn't just sell products : it **tracks everything**. Every click, every page view, every "Add to Cart" is captured, analyzed, and visualized through a custom-built analytics pipeline.
 
